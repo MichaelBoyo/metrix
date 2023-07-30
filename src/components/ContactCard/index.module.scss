@@ -10,6 +10,8 @@
   justify-content: space-between;
 
   gap: 7px;
+}
+.bottom {
   p {
     padding: 0;
     margin: 0;
@@ -31,9 +33,11 @@
 }
 
 .type {
-  border-radius: 8px;
+  border-radius: 50%;
   background: var(--secondary-20, #fef5ea);
-  padding: 2px;
+  padding: 5px;
+  height: max-content;
+  font-size: 10px;
 }
 
 .message,

@@ -21,25 +21,33 @@ const chats = [
   },
 ];
 export const Chat = () => {
+  const ref = React.useRef<null | HTMLDivElement>(null);
   const [value, setValue] = React.useState("");
+
+  const handleScroll = () => {
+    const lastChildElement = ref.current?.lastElementChild;
+    lastChildElement?.scrollIntoView({ behavior: "smooth" });
+  };
 
   const handlelick = () => {
     chats[1].sender.push(`sender\`${value}\`12:55 am`);
     setValue("");
+    handleScroll();
   };
+
   return (
     <div className={style.chat}>
       <ChatHeader />
-      {chats.map((item, idx) => (
-        <div key={idx}>
-          <div className={style.date}>
-            <p>{item.date}</p>
-          </div>
+      <div className={style.chatArea}>
+        {chats.map((item, idx) => (
+          <div key={idx}>
+            <div className={style.date}>
+              <p>{item.date}</p>
+            </div>
 
-          <div className={style.chatBox}>
-            {item.sender.map((msg, idx) => (
-              <div key={idx} className={style[msg.split("`")[0]]}>
-             
+            <div ref={ref} className={style.chatBox}>
+              {item.sender.map((msg, idx) => (
+                <div key={idx} className={style[msg.split("`")[0]]}>
                   <p>{msg.split("`")[1]}</p>
                   <div className={style.time}>
                     <small>{msg.split("`")[2]}</small>
@@ -49,11 +57,12 @@ export const Chat = () => {
                     </i>
                   </div>
                 </div>
-            
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
+
       <ChatFooter value={value} setValue={setValue} handleClick={handlelick} />
     </div>
   );

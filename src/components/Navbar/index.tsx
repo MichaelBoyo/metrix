@@ -38,7 +38,7 @@ const Navbar: FC = () => {
             item !== "" && (
               <div className={style.locationItem} key={idx}>
                 <p>/</p>
-                <Link href={item}>{item}</Link>
+                <Link href={"/" + item}>{item}</Link>
               </div>
             )
         )}

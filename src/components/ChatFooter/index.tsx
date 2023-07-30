@@ -9,7 +9,16 @@ interface ChatFooterProps {
   setValue: (val: string) => void;
   handleClick: () => void;
 }
-export const ChatFooter: FC<ChatFooterProps> = ({ value, setValue, handleClick }) => {
+export const ChatFooter: FC<ChatFooterProps> = ({
+  value,
+  setValue,
+  handleClick,
+}) => {
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter") {
+      handleClick();
+    }
+  };
   return (
     <div className={style.chatFooter}>
       <div className={style.plus}>
@@ -20,11 +29,12 @@ export const ChatFooter: FC<ChatFooterProps> = ({ value, setValue, handleClick }
         value={value}
         type="text"
         placeholder="Your mesage"
+        onKeyDown={handleKeyDown}
       />
       <Emoji />
       <div className={style.sendButton}>
         <Button
-        onClick={handleClick}
+          onClick={handleClick}
           endIcon={<SendICon />}
           sx={{ color: "black", textTransform: "none" }}
         >

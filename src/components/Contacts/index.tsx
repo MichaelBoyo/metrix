@@ -9,7 +9,7 @@ const contacts: ContactCardProps[] = [
     fullname: "John Doe",
     lastText: "Hi, i want make enquiries about yo...",
     time: "12:55am",
-    type: "New",
+    type: "3",
     image: <User1 />,
   },
   {
