@@ -16,37 +16,44 @@ import { ChevronRight, ChevronLeft } from "react-feather";
 import { LogoutIcon } from "../../assets/LogoutIcon";
 import { Logo } from "@/assets/Logo";
 import { IconLogo } from "@/assets/IconLogo";
-const initialSideBarItem: SidebarItemProps[] = [
-  {
-    name: "Dashboard",
-    icon: <DashIcon />,
-    active: true,
-  },
-  {
-    name: "orders",
-    val: 3,
-    icon: <OrdersIcon />,
-  },
-  {
-    name: "Customers",
-    icon: <CustomerIcon />,
-  },
-  {
-    name: "Inventory",
-    icon: <InventoryICon />,
-  },
-  {
-    name: "Conversations",
-    val: 18,
-    icon: <ConversationIcon />,
-  },
-  {
-    name: "Settings",
-    icon: <SettingsIcon />,
-  },
-];
+import { DashIcon2 } from "@/assets/DashIcon2";
+import { ConverseIcon2 } from "@/assets/ConverseIcon2";
 const Sidebar: FC = () => {
   const [collapse, setCollapse] = useState(true);
+
+  const initialSideBarItem: SidebarItemProps[] = [
+    {
+      name: "Dashboard",
+      icon: <DashIcon2 />,
+      icon2: <DashIcon />,
+      active: true,
+      nav: "/",
+    },
+    {
+      name: "orders",
+      val: 3,
+      icon: <OrdersIcon />,
+    },
+    {
+      name: "Customers",
+      icon: <CustomerIcon />,
+    },
+    {
+      name: "Inventory",
+      icon: <InventoryICon />,
+    },
+    {
+      name: "Conversations",
+      val: 18,
+      icon: <ConversationIcon />,
+      icon2: <ConverseIcon2 />,
+      nav: "/conversations",
+    },
+    {
+      name: "Settings",
+      icon: <SettingsIcon />,
+    },
+  ];
   const size = 14;
   return (
     <div

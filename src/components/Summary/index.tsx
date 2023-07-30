@@ -1,6 +1,6 @@
 import { Button } from "@mui/material";
 import style from "./index.module.scss";
-import { ChevronDown } from "@/assets/ChevronDown";
+import { ChevronDown } from "react-feather";
 import { BarChart } from "@/assets/BarChart";
 export const Summary = () => {
   return (
@@ -9,10 +9,17 @@ export const Summary = () => {
         <div className={style.left}>
           <p>Summary</p>
           <div className={style.salesButton}>
-            <Button endIcon={<ChevronDown />}>Sales</Button>
+            <Button sx={{ color: "#5570F1" }} endIcon={<ChevronDown />}>
+              Sales
+            </Button>
           </div>
         </div>
-        <Button endIcon={<ChevronDown />}>Last 7 Days</Button>
+        <Button
+          sx={{ textTransform: "none", color: "black" }}
+          endIcon={<ChevronDown />}
+        >
+          Last 7 Days
+        </Button>
       </div>
 
       <BarChart />

@@ -9,6 +9,7 @@ import { Marketing } from "../Marketing";
 import { Summary } from "../Summary";
 
 import { PurpleCard } from "../PurpleCard";
+import { Cart } from "@/assets/Cart";
 
 const item1: CardItemProps[] = [
   {
@@ -49,6 +50,19 @@ const item3: CardItemProps[] = [
     value: "445",
   },
 ];
+
+const middeItem: CardItemProps[] = [
+  {
+    label: "Abandoned Cart",
+    value: "20%",
+    color: "red",
+    rate: "+0.00%",
+  },
+  {
+    label: "Customers",
+    value: "30",
+  },
+];
 const Dashboard: FC = () => {
   return (
     <div className={style.dashboard}>
@@ -63,7 +77,7 @@ const Dashboard: FC = () => {
             <Marketing />
             <div className={style.doubleCard}>
               <PurpleCard />
-              <BaseCard items={item2} icon={<CustomerIcon2 />} />
+              <BaseCard items={middeItem} icon={<Cart />} />
             </div>
           </div>
           <Summary />

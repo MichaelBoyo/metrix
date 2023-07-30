@@ -25,7 +25,12 @@ export const Marketing = () => {
     <div className={style.marketting}>
       <div className={style.top}>
         <p>Marketing</p>
-        <Button endIcon={<ChevronDown2 />}>This week</Button>
+        <Button
+          sx={{ textTransform: "none", color: "#BEC0CA" }}
+          endIcon={<ChevronDown2 />}
+        >
+          This week
+        </Button>
       </div>
       <div className={style.values}>
         {values.map((item, idx) => (

@@ -7,6 +7,7 @@ export interface CardItemProps {
   label: string;
   value: string;
   rate?: string;
+  color?: string;
 }
 export interface BaseCardProps {
   icon: JSX.Element;
@@ -17,12 +18,17 @@ export const BaseCard: FC<BaseCardProps> = ({ icon, items }) => {
     <div className={style.baseCard}>
       <div className={style.top}>
         {icon}
-        <Button endIcon={<ChevronDown2 />}>This week</Button>
+        <Button
+          sx={{ textTransform: "none", color: "#BEC0CA" }}
+          endIcon={<ChevronDown2 />}
+        >
+          This Week
+        </Button>
       </div>
       <div className={style.body}>
         {items.map((item, idx) => (
           <div key={idx}>
-            <label>{item.label}</label>
+            <label style={{ color: item.color }}>{item.label}</label>
             <div className={style.innerBody}>
               <p>{item.value}</p>
               <small>{item.rate}</small>
