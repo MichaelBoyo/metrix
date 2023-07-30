@@ -11,13 +11,17 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 const Navbar: FC = () => {
   const location = usePathname();
+  const [width, setWidth] = useState(0);
 
-  console.log("location", location);
+  useEffect(() => {
+    setWidth(window.innerWidth);
+  }, []);
 
   return (
     <div>
       <div className={style.navbar}>
         <p>Dashboard</p>
+        width is {width}
         <div className={style.right}>
           <div className={style.mainbutton}>
             <Button endIcon={<ChevronDown />} sx={{ ...baseButtonStyle }}>
