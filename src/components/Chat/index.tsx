@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import style from "./index.module.scss";
 import { ChatHeader } from "../ChatHeader";
@@ -20,6 +21,12 @@ const chats = [
   },
 ];
 export const Chat = () => {
+  const [value, setValue] = React.useState("");
+
+  const handlelick = () => {
+    chats[1].sender.push(`sender\`${value}\`12:55 am`);
+    setValue("");
+  };
   return (
     <div className={style.chat}>
       <ChatHeader />
@@ -32,7 +39,7 @@ export const Chat = () => {
           <div className={style.chatBox}>
             {item.sender.map((msg, idx) => (
               <div key={idx} className={style[msg.split("`")[0]]}>
-                <div className={style.innerDiv}>
+             
                   <p>{msg.split("`")[1]}</p>
                   <div className={style.time}>
                     <small>{msg.split("`")[2]}</small>
@@ -42,12 +49,12 @@ export const Chat = () => {
                     </i>
                   </div>
                 </div>
-              </div>
+            
             ))}
           </div>
         </div>
       ))}
-      <ChatFooter />
+      <ChatFooter value={value} setValue={setValue} handleClick={handlelick} />
     </div>
   );
 };

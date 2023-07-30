@@ -1,0 +1,33 @@
+.chatFooter {
+  border-radius: 8px;
+  border: 1px solid var(--grey, #e1e2e9);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2%;
+
+  padding: 1%;
+  input {
+    width: 75%;
+    border: none;
+  }
+  input:focus {
+    outline: none;
+  }
+}
+.plus {
+  border-radius: 8px;
+  background: var(--secondary-30, #fff2e2);
+  padding: 4px;
+}
+.sendButton,
+.plus {
+  border-radius: 8px;
+  background: var(--secondary-30, #fff2e2);
+  padding: 4px;
+}
+
+.sendButton {
+  padding: 0;
+  height: 30%;
+}

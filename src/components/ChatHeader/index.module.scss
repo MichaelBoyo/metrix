@@ -1,0 +1,53 @@
+.chatHeader {
+  display: flex;
+  justify-content: space-between;
+  padding: 1%;
+
+  p {
+    margin: 0;
+  }
+  border-bottom: 1px solid var(--stroke, #f1f3f9);
+}
+.left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.right {
+  display: flex;
+
+  gap: 10px;
+}
+
+.onlineTime,
+.ordersCount {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.nameDiv,
+.viewProfile {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.viewProfile {
+  p {
+    color: var(--primary-100, #5570f1);
+
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+}
+.name {
+  color: var(--black-60, #45464e);
+
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
