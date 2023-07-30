@@ -1,6 +1,8 @@
 import React from "react";
 import style from "./index.module.scss";
 import { ChatHeader } from "../ChatHeader";
+import { ChatFooter } from "../ChatFooter";
+import { Check } from "@/assets/Check";
 const chats = [
   {
     date: "12 August 2022",
@@ -23,19 +25,29 @@ export const Chat = () => {
       <ChatHeader />
       {chats.map((item, idx) => (
         <div key={idx}>
-          <p className={style.date}>{item.date}</p>
+          <div className={style.date}>
+            <p>{item.date}</p>
+          </div>
+
           <div className={style.chatBox}>
             {item.sender.map((msg, idx) => (
               <div key={idx} className={style[msg.split("`")[0]]}>
                 <div className={style.innerDiv}>
                   <p>{msg.split("`")[1]}</p>
-                  <small>{msg.split("`")[2]}</small>
+                  <div className={style.time}>
+                    <small>{msg.split("`")[2]}</small>
+                    <i>
+                      {" "}
+                      <Check />
+                    </i>
+                  </div>
                 </div>
               </div>
             ))}
           </div>
         </div>
       ))}
+      <ChatFooter />
     </div>
   );
 };
