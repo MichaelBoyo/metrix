@@ -1,0 +1,36 @@
+.phone {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+
+  border-bottom: 1px solid var(--stroke, #f1f3f9);
+}
+
+.innerDiv {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.Pending {
+  border-radius: 8px;
+  background: rgba(245, 126, 119, 0.12);
+  text-align: center;
+
+  color: #cc5f5f;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.Completed {
+  border-radius: 8px;
+  background: rgba(50, 147, 111, 0.12);
+  text-align: center;
+  color: #519c66;
+
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}

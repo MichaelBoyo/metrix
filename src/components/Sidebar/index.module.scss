@@ -1,0 +1,35 @@
+.sideBar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 96vh;
+  padding: 1% 2%;
+  background: white;
+  border: solid 1px red;
+  min-width: 15%;
+}
+.sideBarItems {
+  margin-top: 15%;
+}
+
+.bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 20px;
+}
+.freeGift {
+  display: inline-flex;
+  padding: 1%;
+  align-items: center;
+  border-radius: 16px;
+  background: rgba(255, 204, 145, 0.2);
+  display: flex;
+  flex-direction: column;
+}
+
+.contactSupport {
+  border-radius: 16px;
+  background: rgba(94, 99, 102, 0.1);
+  padding: 1%;
+}

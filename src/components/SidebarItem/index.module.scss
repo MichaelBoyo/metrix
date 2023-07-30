@@ -1,0 +1,10 @@
+.value {
+  border-radius: 500px;
+  background: var(--secondary-100, #ffcc91);
+  padding: 4px 8px 5px 8px;
+}
+.active {
+  border-radius: 12px;
+  background: var(--primary-100, #5570f1);
+  color: white;
+}

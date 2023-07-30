@@ -1,0 +1,35 @@
+.marketting {
+  border-radius: 12px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 48.4%;
+  max-height: 32.5vh;
+}
+.top,
+.values,
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 10px;
+}
+.top {
+  width: 90%;
+}
+.values {
+  width: 70%;
+
+  p {
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    color: #45464e;
+  }
+}
+
+.item {
+  gap: 5px;
+}

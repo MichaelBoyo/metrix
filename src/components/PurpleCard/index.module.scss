@@ -1,0 +1,55 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+.baseCard {
+  border-radius: 12px;
+  background: #5570f1;
+  padding: 11px 15px;
+  color: white;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+}
+.body {
+  display: flex;
+  justify-content: space-between;
+  label {
+    color: white;
+
+    /* Paragraph 2/Regular */
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  p {
+    color: white;
+
+    /* subHeading 3/Medium */
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    padding: 0;
+    margin: 0;
+  }
+
+  small {
+    color: white;
+
+    font-family: Inter;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+}
+.innerBody {
+  display: flex;
+
+  align-items: center;
+  gap: 10px;
+}
