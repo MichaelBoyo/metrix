@@ -1,0 +1,18 @@
+.conversations {
+  p {
+    padding: 0;
+  }
+  padding: 10px;
+}
+.top {
+  display: flex;
+  justify-content: space-between;
+}
+.newMessageButton {
+  border-radius: 12px;
+  background: var(--primary, #5570f1);
+}
+
+.body {
+  display: flex;
+}
