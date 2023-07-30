@@ -1,27 +1,22 @@
 "use client";
-import { FC, useEffect, useState } from "react";
+import { FC } from "react";
 import style from "./index.module.scss";
 import { Button } from "@mui/material";
 import { baseButtonStyle } from "../Sidebar";
-import { ChevronDown } from "../../assets/ChevronDown";
-import { NotificationIcon } from "../../assets/NotificationIcon";
-import { UserImage } from "../../assets/UserImage";
-import { HomeIcon } from "../../assets/HomeIcon";
+import { ChevronDown } from "@/assets/ChevronDown";
+import { NotificationIcon } from "@/assets/NotificationIcon";
+import { UserImage } from "@/assets/UserImage";
+import { HomeIcon } from "@/assets/HomeIcon";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 const Navbar: FC = () => {
   const location = usePathname();
-  const [width, setWidth] = useState(0);
-
-  useEffect(() => {
-    setWidth(window.innerWidth);
-  }, []);
 
   return (
     <div>
       <div className={style.navbar}>
         <p>Dashboard</p>
-        width is {width}
+
         <div className={style.right}>
           <div className={style.mainbutton}>
             <Button endIcon={<ChevronDown />} sx={{ ...baseButtonStyle }}>

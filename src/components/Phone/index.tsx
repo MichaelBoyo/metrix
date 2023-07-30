@@ -4,9 +4,9 @@ import style from "./index.module.scss";
 export interface PhoneProps {
   name: string;
   price: string;
-  count: number;
-  date: string;
-  status: string;
+  count?: number;
+  date?: string;
+  status?: string;
 }
 export const Phone: FC<PhoneProps> = ({ name, price, count, date, status }) => {
   return (
@@ -17,14 +17,14 @@ export const Phone: FC<PhoneProps> = ({ name, price, count, date, status }) => {
           <p> {name}</p>
           <p>
             {" "}
-            {price} X {count}
+            {price} {count && "X"} {count}
           </p>
         </div>
       </div>
 
       <div>
         <p>{date}</p>
-        <p className={style[status]}>{status}</p>
+        <p className={style[status || "Pending"]}>{status}</p>
       </div>
     </div>
   );

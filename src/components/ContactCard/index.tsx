@@ -15,7 +15,7 @@ export const ContactCard: FC<ContactCardProps> = (props) => {
       <div className={style.text}>
         <div className={style.top}>
           <p className={style.name}>{props.fullname}</p>
-          <p className={style.type}>{props.type}</p>
+          {props.type && <small className={style.type}>{props.type}</small>}
         </div>
         <div className={style.bottom}>
           <p className={style.message}>{props.lastText}</p>

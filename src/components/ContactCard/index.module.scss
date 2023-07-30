@@ -1,21 +1,21 @@
 .contactCard {
   display: flex;
   gap: 12px;
-  border-bottom: 1px solid var(--stroke, #f1f3f9);
+  border-bottom: 1px solid #f1f3f9;
   padding: 1%;
+
 }
 .top,
 .bottom {
   display: flex;
   justify-content: space-between;
 
-  gap: 7px;
-}
-.bottom {
+  width: 100%;
   p {
     padding: 0;
     margin: 0;
   }
+  gap: 7px;
 }
 
 .name {
@@ -34,7 +34,7 @@
 
 .type {
   border-radius: 50%;
-  background: var(--secondary-20, #fef5ea);
+  background: #fef5ea;
   padding: 5px;
   height: max-content;
   font-size: 10px;

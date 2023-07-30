@@ -6,7 +6,6 @@
 
 .sender,
 .receiver {
-
   p {
     border-radius: 16px 16px 0px 16px;
     padding: 10px;
@@ -76,7 +75,34 @@
   }
 }
 
-.chatArea{
-    max-height: 57vh;
-    overflow-y: scroll;
+.chatArea {
+  max-height: 57vh;
+  overflow-y: scroll;
+}
+
+.phoneDiv {
+  display: flex;
+
+  width: 40%;
+}
+.inStock {
+  width: 23%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  display: flex;
+  padding-bottom: 5%;
+  color: #a6a8b1;
+  h5 {
+    padding: 0;
+    margin: 0;
+  }
+
+  &_text {
+    color: #5570f1;
+  }
 }

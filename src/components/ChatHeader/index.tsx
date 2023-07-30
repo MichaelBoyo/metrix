@@ -1,8 +1,7 @@
 import React from "react";
 import style from "./index.module.scss";
-import { User1 } from "@/assets/users/User1";
+import { User1 } from "@/assets/users/User";
 import { PutpleDot } from "@/assets/PutpleDot";
-import { Button } from "@mui/material";
 import { OrdersIcon } from "@/assets/OrdersIcon";
 export const ChatHeader = () => {
   return (
@@ -13,13 +12,13 @@ export const ChatHeader = () => {
           <p className={style.name}>Jane Doe</p>
           <div className={style.onlineTime}>
             <PutpleDot />
-            <small>Online</small>
+            <small className={style.online}>Online</small>
             <small>12:55 am</small>
           </div>
         </div>
       </div>
       <div className={style.right}>
-        <p>New Customer</p>
+        <p className={style.newCustomer}>New Customer</p>
         <div className={style.viewProfile}>
           <p>View Profile</p>
           <div className={style.ordersCount}>

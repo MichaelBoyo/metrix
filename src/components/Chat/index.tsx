@@ -4,6 +4,7 @@ import style from "./index.module.scss";
 import { ChatHeader } from "../ChatHeader";
 import { ChatFooter } from "../ChatFooter";
 import { Check } from "@/assets/Check";
+import { Phone, PhoneProps } from "../Phone";
 const chats = [
   {
     date: "12 August 2022",
@@ -34,10 +35,21 @@ export const Chat = () => {
     setValue("");
     handleScroll();
   };
-
+  const phoneData: PhoneProps = {
+    name: "iPhone 13",
+    price: "₦730,000.00",
+  };
   return (
     <div className={style.chat}>
       <ChatHeader />
+      <div className={style.phoneDiv}>
+        <Phone {...phoneData} />
+        <div className={style.inStock}>
+          <h5 className={style.inStock_text}>12</h5>
+          <h5>in stock</h5>
+        </div>
+      </div>
+
       <div className={style.chatArea}>
         {chats.map((item, idx) => (
           <div key={idx}>
@@ -52,7 +64,6 @@ export const Chat = () => {
                   <div className={style.time}>
                     <small>{msg.split("`")[2]}</small>
                     <i>
-                      {" "}
                       <Check />
                     </i>
                   </div>
