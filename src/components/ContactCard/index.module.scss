@@ -1,0 +1,47 @@
+.contactCard {
+  display: flex;
+  gap: 12px;
+  border-bottom: 1px solid var(--stroke, #f1f3f9);
+  padding: 1%;
+}
+.top,
+.bottom {
+  display: flex;
+  justify-content: space-between;
+
+  gap: 7px;
+  p {
+    padding: 0;
+    margin: 0;
+  }
+}
+
+.name {
+  color: #45464e;
+
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.type {
+  border-radius: 8px;
+  background: var(--secondary-20, #fef5ea);
+  padding: 2px;
+}
+
+.message,
+.time {
+  color: var(--black-30, #8b8d97);
+
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}

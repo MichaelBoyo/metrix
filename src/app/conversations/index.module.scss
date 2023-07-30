@@ -10,9 +10,12 @@
 }
 .newMessageButton {
   border-radius: 12px;
-  background: var(--primary, #5570f1);
+  background: #5570f1;
+  height: max-content;
+  width: max-content;
 }
 
 .body {
   display: flex;
+  justify-content: space-between;
 }

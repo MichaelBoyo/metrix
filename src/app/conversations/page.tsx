@@ -11,7 +11,9 @@ const Conversations = () => {
         <p>Conversation with Customers</p>
 
         <div className={style.newMessageButton}>
-          <Button sx={{ ...baseButtonStyle }}>New Message</Button>
+          <Button sx={{ color: "white", textTransform: "none" }}>
+            New Message
+          </Button>
         </div>
       </div>
       <div className={style.body}>

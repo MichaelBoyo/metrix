@@ -1,3 +1,39 @@
 .chat {
   background: white;
+  width: 60%;
+}
+
+.sender,
+.receiver {
+  width: fit-content;
+  p {
+    border-radius: 16px 16px 0px 16px;
+    margin: 0;
+    padding: 10px;
+  }
+  margin: 10px;
+}
+.receiver {
+  p {
+    background: var(--primary-100, #5570f1);
+  }
+  text-align: left;
+  align-self: flex-start;
+}
+
+.sender {
+  text-align: right;
+  align-self: flex-end;
+  p {
+    background: var(--secondary-100, #ffcc91);
+  }
+}
+
+.chatBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.date {
+  text-align: center;
 }
