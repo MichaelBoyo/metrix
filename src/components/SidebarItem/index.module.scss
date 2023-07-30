@@ -8,3 +8,16 @@
   background: var(--primary-100, #5570f1);
   color: white;
 }
+.sideBarItemCollapse {
+  position: relative;
+  width: max-content;
+  padding: 4px 8px 5px 8px;
+  padding-bottom: 3px;
+}
+
+.collapseVal {
+  position: absolute;
+  padding: 1px;
+  font-size: 10px;
+  right: -3px;
+}

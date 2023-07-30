@@ -1,8 +1,8 @@
-import { FC } from "react";
-import logo from "../../assets/logo.svg";
+"use client";
+import { FC, useState } from "react";
 import SidebarItem, { SidebarItemProps } from "../SidebarItem";
 
-import { Button } from "@mui/material";
+import { Button, IconButton } from "@mui/material";
 import style from "./index.module.scss";
 import CustomerIcon from "../../assets/CustomerIcon";
 import DashIcon from "../../assets/DashIcon";
@@ -12,9 +12,10 @@ import { ConversationIcon } from "../../assets/ConversationIcon";
 import { SettingsIcon } from "../../assets/SettingsIcon";
 import { SupportIcon } from "../../assets/SupportIcon";
 import { GiftIcon } from "../../assets/GiftIcon";
-import { ChevronRight } from "../../assets/ChevronRight";
+import { ChevronRight, ChevronLeft } from "react-feather";
 import { LogoutIcon } from "../../assets/LogoutIcon";
 import { Logo } from "@/assets/Logo";
+import { IconLogo } from "@/assets/IconLogo";
 const initialSideBarItem: SidebarItemProps[] = [
   {
     name: "Dashboard",
@@ -45,40 +46,83 @@ const initialSideBarItem: SidebarItemProps[] = [
   },
 ];
 const Sidebar: FC = () => {
+  const [collapse, setCollapse] = useState(true);
+  const size = 14;
   return (
-    <div className={style.sideBar}>
+    <div
+      style={{ minWidth: collapse ? "1px" : "15%" }}
+      className={style.sideBar}
+    >
+      <div className={style.collapse}>
+        {collapse ? (
+          <IconButton onClick={() => setCollapse(false)}>
+            <ChevronRight size={size} />
+          </IconButton>
+        ) : (
+          <IconButton onClick={() => setCollapse(true)}>
+            <ChevronLeft size={size} />
+          </IconButton>
+        )}
+      </div>
       <div className={style.top}>
-        <Logo />
+        {collapse ? <IconLogo /> : <Logo />}
 
-        <div className={style.sideBarItems}>
+        <div
+          style={{ marginTop: collapse ? "100%" : "15%" }}
+          className={style.sideBarItems}
+        >
           {initialSideBarItem.map((item, idx) => (
-            <SidebarItem key={idx} {...item} />
+            <SidebarItem collapse={collapse} key={idx} {...item} />
           ))}
         </div>
       </div>
 
       <div className={style.bottom}>
-        <div className={style.contactSupport}>
-          <Button startIcon={<SupportIcon />} sx={baseButtonStyle}>
-            Contact Support
-          </Button>
+        <div
+          style={{ padding: collapse ? "10px" : "0" }}
+          className={style.contactSupport}
+        >
+          {collapse ? (
+            <SupportIcon />
+          ) : (
+            <Button startIcon={<SupportIcon />} sx={baseButtonStyle}>
+              Contact Support
+            </Button>
+          )}
         </div>
 
-        <div className={style.freeGift}>
-          <Button startIcon={<GiftIcon />} sx={baseButtonStyle}>
-            Free Gift Awaits You!
-          </Button>
-          <Button
-            endIcon={<ChevronRight />}
-            sx={{ ...baseButtonStyle, color: "#6E7079" }}
-          >
-            Upgrade your account
-          </Button>
-        </div>
+        <div
+          style={{ padding: collapse ? "10px" : "0" }}
+          className={style.freeGift}
+        >
+          {collapse ? (
+            <GiftIcon />
+          ) : (
+            <Button startIcon={<GiftIcon />} sx={baseButtonStyle}>
+              Free Gift Awaits You!
+            </Button>
+          )}
 
-        <Button startIcon={<LogoutIcon />} sx={baseButtonStyle}>
-          Logout
-        </Button>
+          {collapse ? (
+            ""
+          ) : (
+            <Button
+              endIcon={<ChevronRight />}
+              sx={{ ...baseButtonStyle, color: "#6E7079" }}
+            >
+              Upgrade your account
+            </Button>
+          )}
+        </div>
+        {collapse ? (
+          <div className={style.logout}>
+            <LogoutIcon />
+          </div>
+        ) : (
+          <Button startIcon={<LogoutIcon />} sx={baseButtonStyle}>
+            Logout
+          </Button>
+        )}
       </div>
     </div>
   );

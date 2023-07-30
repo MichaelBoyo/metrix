@@ -13,12 +13,17 @@
     font-style: normal;
     font-weight: 500;
     line-height: normal;
+    padding: 0;
+    margin: 0;
   }
 }
 .breadCrumbs {
   border-top: 1px solid var(--stroke, #f1f3f9);
   background: #fff;
   padding-left: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 .mainbutton {
   border-radius: 8px;
@@ -29,4 +34,18 @@
   display: flex;
   gap: 20px;
   align-items: center;
+}
+.locationItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  a {
+    text-decoration: none;
+    color: black;
+  }
+  p {
+    padding: 0;
+    margin: 0;
+  }
 }

@@ -5,11 +5,19 @@
   height: 96vh;
   padding: 1% 2%;
   background: white;
-  border: solid 1px red;
-  min-width: 15%;
+
+  position: relative;
+ 
 }
 .sideBarItems {
   margin-top: 15%;
+}
+.collapse {
+  position: absolute;
+
+  right: 0;
+  top: 2px;
+  border-radius: 50%;
 }
 
 .bottom {
@@ -32,4 +40,8 @@
   border-radius: 16px;
   background: rgba(94, 99, 102, 0.1);
   padding: 1%;
+}
+
+.logout {
+  padding: 10px;
 }
