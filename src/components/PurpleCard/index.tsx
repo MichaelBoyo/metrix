@@ -22,8 +22,8 @@ export const PurpleCard: FC = () => {
         <InventoryICon />
       </div>
       <div className={style.body}>
-        {items.map((item) => (
-          <div>
+        {items.map((item, idx) => (
+          <div key={idx}>
             <label>{item.label}</label>
             <div className={style.innerBody}>
               <p>{item.value}</p>
